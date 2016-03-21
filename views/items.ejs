@@ -15,17 +15,38 @@
   </head>
   <body>
     <div class="container-fluid">
-      <div class="row"></div>
       <div class="row">
-        <div class="col-md-3"></div>
-        <div class="col-md-5">
+        <div class="col-md-8">
           <form action="">
             <div class="form-group">
-              <input type="text" class="form-control" id="searchInput" placeholder="上次放松是什么时候都不记得了">
+              <input type="text" class="form-control" id="descInput" value="<%= keyWord %>" />
             </div>
           </form>
         </div>
         <div class="col-md-4 search">去踏春</div>
+      </div>
+      <% items.forEach(function(item){ %>
+        <% include search/show %>
+      <% }) %>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <nav>
+          <ul class="pagination">
+            <li>
+              <a href="#" aria-label="上一页">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li>
+              <a href="#" aria-label="下一页">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </div>
   </body>
@@ -34,7 +55,7 @@
 <script type="text/javascript">
   $(function(){
     $(".search").click(function(){
-        window.location = '/search?keyWord=' +  $("#searchInput").val();
+
     });
   });
 </script>
