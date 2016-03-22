@@ -17,9 +17,9 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-8">
-          <form action="">
+          <form id="formaction" action="/search" method="get">
             <div class="form-group">
-              <input type="text" class="form-control" id="searchInput" value="<%= keyWord %>" />
+              <input type="text" class="form-control" id="searchInput" name="keyWord" value="<%= keyWord %>" />
             </div>
           </form>
         </div>
@@ -40,7 +40,7 @@
 <script type="text/javascript">
   $(function(){
     $(".search").click(function(){
-      window.location = '/search?keyWord=' +  $("#searchInput").val();
+      $("#formaction").submit();
     });
   });
 </script>
