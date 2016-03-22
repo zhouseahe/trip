@@ -19,7 +19,7 @@
         <div class="col-md-8">
           <form action="">
             <div class="form-group">
-              <input type="text" class="form-control" id="descInput" value="<%= keyWord %>" />
+              <input type="text" class="form-control" id="searchInput" value="<%= keyWord %>" />
             </div>
           </form>
         </div>
@@ -31,22 +31,7 @@
     </div>
     <div class="row">
       <div class="col-md-8">
-        <nav>
-          <ul class="pagination">
-            <li>
-              <a href="#" aria-label="上一页">
-                <span aria-hidden="true">&laquo;</span>
-              </a>
-            </li>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li>
-              <a href="#" aria-label="下一页">
-                <span aria-hidden="true">&raquo;</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
+        <% include pages %>
       </div>
     </div>
   </body>
@@ -55,7 +40,7 @@
 <script type="text/javascript">
   $(function(){
     $(".search").click(function(){
-
+      window.location = '/search?keyWord=' +  $("#searchInput").val();
     });
   });
 </script>

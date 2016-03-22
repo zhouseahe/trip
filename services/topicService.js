@@ -10,5 +10,14 @@ module.exports = {
             }
             cb(null, topics);
         });
+    },
+    count: function(param,cb){
+        topic.count(param.query,function (err, count) {
+            if (err) {
+                cb(err, null);
+                return;
+            }
+            cb(null, count);
+        });
     }
 }
