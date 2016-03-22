@@ -9,8 +9,12 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/search',function(req, res, next){
-  var keyWord = req.param('keyWord');
-  topicService.find(keyWord,function(err,topics){
+  var keyWord = req.query.keyWord;
+  var page = parseInt(req.query.page, 10) || 1;
+  var limit = site.page_count_limit;
+  var options = { skip: (page - 1) * limit, limit: limit};
+  var param = {query:{title:/[keyWord]/},page:page,options:options};
+  topicService.find(param,function(err,topics){
       if(err){
         return ;
       }

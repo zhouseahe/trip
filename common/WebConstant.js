@@ -1,7 +1,5 @@
-/**
- * Created by zhoushaohe on 2016/3/21.
- */
 module.exports = {
-    title : "农家乐",
-    description : "近郊旅游直通车 。。。"
+    title : "鍝堝搱",
+    description : "鍝堝搱",
+    page_count_limit :10
 }
