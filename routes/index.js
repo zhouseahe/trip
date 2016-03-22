@@ -10,8 +10,7 @@ router.get('/', function(req, res, next) {
 
 router.get('/search',function(req, res, next){
   var keyWord = req.param('keyWord');
-  var regquery = '/' + keyWord + '/';
-  topicService.find({title:new RegExp(escape(regquery))},function(err,topics){
+  topicService.find(keyWord,function(err,topics){
       if(err){
         return ;
       }
