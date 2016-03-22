@@ -4,7 +4,6 @@ var pageCount = site.page_count_limit;
 
 exports.pageList = function (page,count) {
     count =  Math.ceil(count/pageCount);
-    console.log(count)
     if(count<=countPage){
         return getPages(1,count);
     }

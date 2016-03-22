@@ -12,10 +12,11 @@ router.get('/', function(req, res, next) {
 
 router.get('/search',function(req, res, next){
   var keyWord = req.query.keyWord;
+    console.log(keyWord)
   var page = parseInt(req.query.page, 10) || 1;
   var limit = site.page_count_limit;
   var options = { skip: (page - 1) * limit, limit: limit};
-  var param = {query:{title:/[keyWord]/},page:page,options:options};
+  var param = {query:{title:new RegExp(keyWord)},page:page,options:options};
     async.parallel([
             function(callback){
                 topicService.find(param,function(err,topics){
@@ -42,6 +43,7 @@ router.get('/search',function(req, res, next){
                 res.render('error', {message:'查询出错了！'});
                 return ;
             }
+            console.log(results)
             var pages = pageUtil.pageList(page,results[1]);
             var url = "/search?keyWord=" + keyWord +"&page=";
             res.render('items', {title:site.title,items:results[0],keyWord:keyWord,page:page,pages:pages,url:url});

@@ -3,6 +3,7 @@ var topic = models.topic;
 
 module.exports = {
     find : function(param,cb) {
+        console.log(param.options)
         topic.find(param.query,{},param.options,function (err, topics) {
             if (err) {
                 cb(err, null);
