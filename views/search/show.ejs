@@ -1,11 +1,15 @@
-<div class="row">
-  <div class="col-md-3">
-    名称 : <%= item.name %>
+<div class="row" style="line-height: 100px">
+  <div class="col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><a href="/item?id=<%= item.id %>" target="_blank"><%= item.title %></a></h3>
+      </div>
+      <div class="panel-body" style="line-height: 40px">
+        联系人：<%= item.name %> &nbsp;&nbsp;&nbsp;&nbsp; 电话：<%= item.telephone %> <br/>
+        <%= item.content %>
+      </div>
+    </div>
+
   </div>
-  <div class="col-md-3">
-    联系人 ：十渡全知
-  </div>
-  <div class="col-md-3">
-    电话 ：15210359666
-  </div>
+
 </div>

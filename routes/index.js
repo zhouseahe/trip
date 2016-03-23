@@ -10,6 +10,24 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: site.title });
 });
 
+router.get('/item', function(req, res, next) {
+    var id = req.query.id;
+    var param = {query:{_id:id}};
+    topicService.findOne(param,function(err,item){
+        if(err){
+            console.log(err)
+            res.render('error', {message:'查询出错了！'});
+            return ;
+        }
+        if(item){
+            res.render('detail/item', { title: site.title,item:item});
+        }else{
+            res.render('error', { title: site.title,message:'链接不存在'});
+        }
+
+    });
+});
+
 router.get('/search',function(req, res, next){
   var keyWord = req.query.keyWord;
   var page = parseInt(req.query.page, 10) || 1;

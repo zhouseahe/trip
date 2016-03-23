@@ -19,5 +19,14 @@ module.exports = {
             }
             cb(null, count);
         });
+    },
+    findOne : function(param,cb){
+        topic.findOne(param.query,function(err,item){
+            if(err){
+                cb(err, null);
+                return;
+            }
+            cb(null, item);
+        })
     }
 }
