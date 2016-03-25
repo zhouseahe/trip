@@ -10,6 +10,8 @@ var TopicSchema = new Schema({
     telephone: { type: Number },
     province: { type: String },
     address:{ type: String },
+    area:{ type: String },
+    distance:{ type: String },
     wechat:{ type: String },
     visit_count: { type: Number, default: 0 },
     create_at: { type: Date, default: Date.now },
