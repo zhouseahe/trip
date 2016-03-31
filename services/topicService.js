@@ -28,5 +28,9 @@ module.exports = {
             }
             cb(null, item);
         })
+    },
+    insert : function(param,cb){
+        var item = new topic(param);
+        item.save(cb);
     }
 }
