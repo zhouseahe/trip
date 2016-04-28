@@ -16,7 +16,10 @@
 <body>
 <div class="container-fluid">
   <div class="jumbotron">
-    <h1><%= item.title %></h1>
+    <h2><%= item.title %></h2>
+    电话：<a href="tel:<%= item.telephone %>"><%= item.telephone %></a><br/>
+    景区：<%= item.area %> &nbsp;&nbsp;&nbsp;&nbsp; 地址：<%= item.address %> <br/>
+    设施：<%= item.facility %> &nbsp;&nbsp;&nbsp;&nbsp;<br/>
     <p><%= item.content %></p>
 
   </div>

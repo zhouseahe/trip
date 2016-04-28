@@ -62,10 +62,9 @@ function parseItem(body){
     var title = $('div .yahei').attr('title');
     var area = position[0].replace('[','');
     var address =position[1];
-    var telephone = full[0].children[3].children[0].data;
-    var facility = '';
-    var content= '';
+    var telephone = '', facility = '', content= '';
     try{
+        telephone = full[0].children[3].children[0].data;
         facility = full[4].children[3].children[3].children[0].data;
         content = full[5].children[3].children[3].children[0].data;
     }catch(ex){
