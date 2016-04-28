@@ -30,7 +30,7 @@ router.get('/item', function(req, res, next) {
 
 router.get('/search',function(req, res, next){
   var keyWord = req.query.keyWord;
-  var page = parseInt(req.query.page, 10) || 1;
+  var page = parseInt(req.query.page<1 ? 1 : req.query.page, 10) || 1;
   var limit = site.page_count_limit;
   var options = { skip: (page - 1) * limit, limit: limit};
   var param = {query:{search:new RegExp(keyWord)},page:page,options:options};

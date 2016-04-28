@@ -4,11 +4,11 @@ var pageCount = site.page_count_limit;
 
 exports.pageList = function (page,count) {
     count =  Math.ceil(count/pageCount);
-    if(count<=countPage){
-        return getPages(1,count);
+    if(count<=countPage || page < countPage){
+        return getPages(1,countPage);
     }
-    if(count - page < countPage/2){
-        return getPages(count-countPage +1,countPage);
+    if(count - page < countPage){
+        return getPages(count-countPage +1,count);
     }
     return getPages(page-countPage/2,page + countPage/2 -1);
 };

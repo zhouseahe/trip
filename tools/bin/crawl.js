@@ -4,7 +4,7 @@ var url ='http://hotel.elong.com/ajax/list/asyncsearch?listRequest.pageIndex=';
 var async = require('async');
 
 var tasks = [];
-for(var i = 249 ; i<389;i++){
+for(var i = 1 ; i<339;i++){
     tasks.push(i);
 }
 async.mapLimit(tasks, 1, function(item,callback){
