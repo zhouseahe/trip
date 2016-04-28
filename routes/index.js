@@ -33,7 +33,7 @@ router.get('/search',function(req, res, next){
   var page = parseInt(req.query.page, 10) || 1;
   var limit = site.page_count_limit;
   var options = { skip: (page - 1) * limit, limit: limit};
-  var param = {query:{title:new RegExp(keyWord)},page:page,options:options};
+  var param = {query:{search:new RegExp(keyWord)},page:page,options:options};
     async.parallel([
             function(callback){
                 topicService.find(param,function(err,topics){

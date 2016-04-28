@@ -29,8 +29,13 @@ module.exports = {
             cb(null, item);
         })
     },
-    insert : function(param,cb){
-        var item = new topic(param);
-        item.save(cb);
+    insertMany : function(batch,cb){
+        topic.insertMany(batch,function(err,docs){
+            if(err){
+                cb(err, null);
+                return;
+            }
+            cb(null,docs);
+        });
     }
 }

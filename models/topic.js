@@ -2,15 +2,17 @@ var mongoose  = require('mongoose');
 var BaseModel = require("./base_model");
 var Schema    = mongoose.Schema;
 var ObjectId  = Schema.ObjectId;
-
+// 名称  ， 区域[] （ 景区 ），地址 ， 电话 ， 设施 ， 简介 ，省 ， 搜索
 var TopicSchema = new Schema({
     title: { type: String },
-    content: { type: String },
-    name: { type: String },
-    telephone: { type: Number },
-    province: { type: String },
+    area:{ type: String },
     address:{ type: String },
-    area:{ type: Object },
+    telephone: { type: String },
+    facility:{ type: String },
+    content: { type: String },
+    province: { type: String },
+    search:{type:String},
+    name: { type: String },
     distance:{ type: String },
     visit_count: { type: Number, default: 0 },
     call_times:{type:Number , default:0},

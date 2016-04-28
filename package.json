@@ -19,6 +19,9 @@
     "bcryptjs": "2.3.0",
     "log4js": "^0.6.29",
     "xlsx":"0.8.0",
-    "yargs":"4.3.2"
+    "yargs":"4.3.2",
+    "cheerio":"0.20.0",
+    "request": "2.72.0",
+    "msexcel-builder":"0.0.2"
   }
 }
