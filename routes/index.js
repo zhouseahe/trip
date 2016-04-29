@@ -62,7 +62,7 @@ router.get('/search',function(req, res, next){
             }
             var pages = pageUtil.pageList(page,results[1]);
             var url = "/search?keyWord=" + keyWord +"&page=";
-            res.render('items', {title:site.title,items:results[0],keyWord:keyWord,page:page,pages:pages,url:url});
+            res.render('items', {title:site.title,items:results[0],keyWord:keyWord,page:page,pages:pages,url:url,count:results[1]});
         });
 
 });
