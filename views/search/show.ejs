@@ -4,10 +4,11 @@
       <div class="panel-heading">
         <h3 class="panel-title"><a href="/item?id=<%= item.id %>" target="_blank"><%= item.title %></a></h3>
       </div>
-      <div class="panel-body" style="line-height: 40px">
-        电话：<a href="tel:<%= item.telephone %>"><%= item.telephone %></a><br/>
-        景区：<%= item.area %> &nbsp;&nbsp;&nbsp;&nbsp; 地址：<%= item.address %> <br/>
-        设施：<%= item.facility %> &nbsp;&nbsp;&nbsp;&nbsp;
+      <div class="panel-body" style="line-height: 32px">
+        <span class="label label-primary">电话</span>：<a href="tel:<%= item.telephone %>"><%= item.telephone %></a><br/>
+        <span class="label label-primary">景区</span>：<%= item.area %> &nbsp;&nbsp;&nbsp;&nbsp;
+        <span class="label label-primary">地址</span>：<%= item.address %> <br/>
+        <span class="label label-primary">设施</span>：<%= item.facility %> &nbsp;&nbsp;&nbsp;&nbsp;
       </div>
     </div>
 

@@ -15,13 +15,15 @@
 </head>
 <body>
 <div class="container-fluid">
-  <div class="jumbotron">
+  <div class="jumbotron" style="line-height: 38px">
     <h2><%= item.title %></h2>
-    电话：<a href="tel:<%= item.telephone %>"><%= item.telephone %></a><br/>
-    景区：<%= item.area %> &nbsp;&nbsp;&nbsp;&nbsp; 地址：<%= item.address %> <br/>
-    设施：<%= item.facility %> &nbsp;&nbsp;&nbsp;&nbsp;<br/>
-    <p><%= item.content %></p>
-
+    <span class="label label-primary">电话</span>：<a href="tel:<%= item.telephone %>"><%= item.telephone %></a><br/>
+    <span class="label label-primary">景区</span>：<%= item.area %> &nbsp;&nbsp;&nbsp;&nbsp;
+    <span class="label label-primary">地址</span>：<%= item.address %> <br/>
+    <span class="label label-primary">设施</span>：<%= item.facility %> &nbsp;&nbsp;&nbsp;&nbsp;<br/>
+    <blockquote>
+      <p ><%= item.content %></p>
+    </blockquote>
   </div>
 </div>
 </body>
