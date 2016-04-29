@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
+    <link rel="my Icon" href="favicon.ico" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,39 +10,35 @@
        .search{
           font-size: 22px
        }
+       .middle{
+          margin-top:10%;
+       }
     </style>
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
   </head>
   <body>
     <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-8">
+      <div class="row middle">
+        <div class="col-md-3"></div>
+        <div class="col-md-5">
           <form id="formaction" action="/search" method="get">
             <div class="form-group">
-              <input type="text" class="form-control" id="searchInput" name="keyWord" value="<%= keyWord %>" />
+              <input type="text" class="form-control" id="searchInput" name="keyWord" placeholder="">
             </div>
           </form>
         </div>
         <div class="col-md-4 search">搜索一下</div>
       </div>
-      <% items.forEach(function(item){ %>
-        <% include search/show %>
-      <% }) %>
-    </div>
-    <div class="row">
-      <div class="col-md-8">
-        <% include pages %>
-      </div>
-      <div style="position: relative;text-align: center;margin-top: 80px">© 2016 - 2018 All Rights Reserved. 京ICP备16021115号</div>
+      <div style="position: relative;text-align: center;margin-top: 260px">© 2016 - 2018 All Rights Reserved. 京ICP备16021115号</div>
     </div>
   </body>
   <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script type="text/javascript">
+  <script type="text/javascript">
   $(function(){
     $(".search").click(function(){
-      $("#formaction").submit();
+        $("#formaction").submit();
     });
   });
 </script>

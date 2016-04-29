@@ -23,7 +23,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/topics', topics);
+app.use('/console', topics);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
