@@ -1,9 +1,3 @@
-<nav>
-  <ul class="pagination">
-    <% for(var i =0; i< pages.length;i++){ %>
-      <li  <%if(page==pages[i]){%> class="disabled" <%}%> ><a href="<%=url+pages[i] %>"><%=pages[i]%></a></li>
-    <% } %>
-    <li  class="disabled"><a href="">...</a></li>
-    <li  class="disabled"><a href=""><%=count%></a></li>
-  </ul>
-</nav>
+<% items.forEach(function(item){ %>
+  <% include search/show %>
+<% }) %>
