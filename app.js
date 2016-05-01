@@ -11,15 +11,15 @@ var topics = require('./routes/topics');
 
 var app = express();
 
-var session = require('express-session');
-var MongoStore = require('connect-mongo')(session);
-app.use(session({
-  secret:config.session_secret,
-  store: new MongoStore({
-    url:config.db
-    //,autoRemove: 'native'
-  })
-}));
+//var session = require('express-session');
+//var MongoStore = require('connect-mongo')(session);
+//app.use(session({
+//  secret:config.session_secret,
+//  store: new MongoStore({
+//    url:config.db
+//    //,autoRemove: 'native'
+//  })
+//}));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
