@@ -25,9 +25,13 @@
         </div>
         <div class="col-md-4 search">搜索一下</div>
       </div>
+      <%if(items.length>0){%>
       <% items.forEach(function(item){ %>
-        <% include search/show %>
+      <% include search/show %>
       <% }) %>
+      <%}else{%>
+          <div>没有找到 “<%= keyWord %>” 相关条目</div>
+      <%}%>
     </div>
     <div class="row">
       <div class="col-md-8">
