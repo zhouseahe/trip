@@ -1,0 +1,66 @@
+<div>
+  <div class="row">
+    <div class="col-md-8">
+      <form class="form-horizontal">
+        <div class="form-group">
+          <div class="col-sm-5">
+            <input type="text" id="keyWord" class="form-control" value="<%=keyWord%>" placeholder="关键字">
+          </div>
+          <div class="col-sm-5">
+            <input type="text" id="telephone" class="form-control" value="<%=telephone%>" placeholder="电话">
+          </div>
+        </div>
+        <div class="col-md-4"><a class='search' href="javascript:;">查询</a></div>
+      </form>
+    </div>
+    <div class="col-md-12"><hr></div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">名称</div>
+    <div class="col-md-3">电话</div>
+    <div class="col-md-3">景区</div>
+    <div class="col-md-1">操作</div>
+  </div>
+  <% items.forEach(function(item){ %>
+  <div class="row">
+    <div class="col-md-4"><%=item.title%></div>
+    <div class="col-md-3"><%=item.telephone%></div>
+    <div class="col-md-3"><%=item.area%></div>
+    <div class="col-md-1 editItem" opId="<%=item.id%>"><a href="javascript:;">编辑</a></div>
+  </div>
+  <% }) %>
+  <%if(items.length > 0){%>
+  <div class="row">
+    <div class="col-md-8">
+      <% include pages %>
+    </div>
+  </div>
+  <%}%>
+</div>
+<script type="text/javascript">
+  $(function(){
+    $(".search").on('click',function(){
+      var keyWord = $('#keyWord').val();
+      var telephone = $('#telephone').val();
+      $.get('/console/list?keyWord=' +keyWord +"&telephone=" + telephone ,function(data){
+        $('#main').html(data);
+      });
+    });
+    $('ul li a').on('click',function(){
+      var page = $(this).text();
+      var keyWord = $('#keyWord').val();
+      var telephone = $('#telephone').val();
+      $.get('/console/list?keyWord=' +keyWord +"&telephone=" + telephone + "&page="+ page,function(data){
+        $('#main').html(data);
+      });
+    });
+
+    $('.editItem').on('click',function(){
+      var id = $(this).attr('opId');
+      $.get('/console/item?id=' +id,function(data){
+        $('#main').html(data);
+      });
+    });
+  });
+</script>

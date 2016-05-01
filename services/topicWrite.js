@@ -21,12 +21,12 @@ module.exports = {
         });
     },
     findOne : function(param,cb){
-        topic.findOne(param.query,function(err,item){
+        topic.findOne(param.query,function(err,doc){
             if(err){
                 cb(err, null);
                 return;
             }
-            cb(null, item);
+            cb(null, doc);
         })
     },
     insertMany : function(batch,cb){
@@ -36,6 +36,21 @@ module.exports = {
                 return;
             }
             cb(null,docs);
+        });
+    },
+    save : function(item,cb){
+        topic.create(item, function(err,doc){
+            cb(err,doc);
+        });
+    },
+    update: function(item,cb){
+        var condition = {_id:item.id};
+        topic.update(condition, item , function(err, doc) {
+            if(err){
+                cb(err, null);
+                return;
+            }
+            cb(null,doc);
         });
     }
 }

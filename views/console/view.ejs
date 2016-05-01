@@ -1,0 +1,24 @@
+<div>
+  <div class="row">
+    <div class="jumbotron" style="line-height: 38px">
+      <h2><%= item.title %></h2>
+      <span class="label label-primary">电话</span>：<a href="tel:<%= item.telephone %>"><%= item.telephone %></a><br/>
+      <span class="label label-primary">景区</span>：<%= item.area %> &nbsp;&nbsp;&nbsp;&nbsp;
+      <span class="label label-primary">地址</span>：<%= item.address %> <br/>
+      <span class="label label-primary">设施</span>：<%= item.facility %> &nbsp;&nbsp;&nbsp;&nbsp;<br/>
+      <blockquote>
+        <p ><%= item.content %></p>
+      </blockquote>
+    <div class="col-md-12"><hr></div>
+  </div>
+</div>
+<script type="text/javascript">
+  $(function(){
+    $(".return").on('click',function(){
+      var form = $('form').serialize();
+      $.post('/console/list?keyWord=' +keyWord +"&telephone=" + telephone ,function(data){
+        $('#main').html(data);
+      });
+    });
+  });
+</script>

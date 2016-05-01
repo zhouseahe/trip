@@ -5,10 +5,21 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+var config = require('./config.js');
 var routes = require('./routes/index');
 var topics = require('./routes/topics');
 
 var app = express();
+
+var session = require('express-session');
+var MongoStore = require('connect-mongo')(session);
+app.use(session({
+  secret:config.session_secret,
+  store: new MongoStore({
+    url:config.db,
+    autoRemove: 'native' // Default
+  })
+}));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

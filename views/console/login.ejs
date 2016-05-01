@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <link rel="my Icon" href="favicon.ico" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= title %></title>
+    <style>
+       .input{
+
+       }
+    </style>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container-fluid">
+      <form action="/console/login" method="post">
+        <div class="form-group">
+          <label>用户名</label>
+          <input type="text" name="name" class="form-control" style=" width:300px" placeholder="用户名">
+        </div>
+        <div class="form-group">
+          <label>密码</label>
+          <input type="password" name="password" class="form-control" style=" width:300px"  placeholder="密码">
+        </div>
+        <button type="submit" class="btn btn-default">登录</button>
+      </form>
+      <div style="position: relative;text-align: center;margin-top: 280px">© 2016 - 2018 All Rights Reserved. 京ICP备16021115号</div>
+    </div>
+  </body>
+  <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+  $(function(){
+
+  });
+</script>
+</html>

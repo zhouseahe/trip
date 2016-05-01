@@ -2,7 +2,7 @@ var request = require('request');
 var cheerio = require("cheerio");
 var itemUrl = 'http://hotel.elong.com/beijing/';
 var async = require('async');
-var topicService = require('../../services/topicService.js');
+var topicWrite = require('../../services/topicWrite.js');
 
 module.exports = {
     findPageItems:function(url,index,cb){
@@ -39,7 +39,7 @@ module.exports = {
                     cb(err,null);
                     return ;
                 }
-                topicService.insertMany(results,function(err,data){
+                topicWrite.insertMany(results,function(err,data){
                     if(err){
                         console.log(err);
                         return ;
@@ -74,6 +74,5 @@ function parseItem(body){
     var search = title +  area;
     var topic = {title:title,area:area , address : address , telephone:telephone ,
         facility:facility, content: content ,province : province , search : search};
-    //console.log(topic);
     return topic;
 }

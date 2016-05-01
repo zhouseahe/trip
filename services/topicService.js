@@ -28,14 +28,5 @@ module.exports = {
             }
             cb(null, item);
         })
-    },
-    insertMany : function(batch,cb){
-        topic.insertMany(batch,function(err,docs){
-            if(err){
-                cb(err, null);
-                return;
-            }
-            cb(null,docs);
-        });
     }
 }

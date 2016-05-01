@@ -1,0 +1,57 @@
+<div>
+  <div class="row">
+    <div class="col-md-8">
+      <form>
+        <input type="hidden" name="id" value="<%=item.id%>" />
+        <div class="form-group">
+          <label for="title">名称</label>
+          <input type="text" class="form-control" id="title" value="<%=item.title%>" placeholder="名称">
+        </div>
+        <div class="form-group">
+          <label for="area">景区</label>
+          <input type="text" class="form-control" id="area"  value="<%=item.area%>" placeholder="景区">
+        </div>
+        <div class="form-group">
+          <label for="telephone">电话</label>
+          <input type="text" class="form-control" id="telephone" value="<%=item.telephone%>" placeholder="电话">
+        </div>
+        <div class="form-group">
+          <label for="address">地址</label>
+          <input type="text" class="form-control" id="address" value="<%=item.address%>" placeholder="地址">
+        </div>
+        <div class="form-group">
+          <label for="facility">设施</label>
+          <input type="text" class="form-control" id="facility" value="<%=item.facility%>" placeholder="设施">
+        </div>
+        <div class="form-group">
+          <label for="province">地区</label>
+          <input type="text" class="form-control" id="province" value="<%=item.province%>" placeholder="地区">
+        </div>
+        <div class="form-group">
+          <label>简介</label>
+          <textarea type="text" class="form-control" id="content"><%=item.content%></textarea>
+        </div>
+        <div><a class='save' href="javascript:;">保存</a></div>
+      </form>
+    </div>
+    <div class="col-md-12"><hr></div>
+  </div>
+</div>
+<script type="text/javascript">
+  $(function(){
+    $(".save").on('click',function(){
+      var id = $('#id').val();
+      var title = $("#title").val();
+      var area = $("#area").val();
+      var telephone = $("#telephone").val();
+      var address = $("#address").val();
+      var facility = $("#facility").val();
+      var province = $("#province").val();
+      var content = $("#content").val();
+      $.post('/console/item',{id:id,title:title,area:area,telephone:telephone,address:address,
+        facility:facility,province:province,content:content},function(data){
+          $('#main').html(data);
+      });
+    });
+  });
+</script>

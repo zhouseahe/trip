@@ -13,11 +13,14 @@ var config = {
 
     db: 'mongodb://127.0.0.1:27017/tripstore',
 
+    user:'leilei',
+    auth:'author',
+
     redis_host: '127.0.0.1',
     redis_port: 6379,
     redis_db: 0,
 
-    session_secret: 'hd_club_secret',
+    session_secret: 'trip_secret',
     auth_cookie_name: 'hd_club',
 
 

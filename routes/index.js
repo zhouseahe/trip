@@ -24,7 +24,6 @@ router.get('/item', function(req, res, next) {
         }else{
             res.render('error', { title: site.title,message:'链接不存在'});
         }
-
     });
 });
 
@@ -56,15 +55,14 @@ router.get('/search',function(req, res, next){
         ],
         function(err, results){
             if(err){
-                console.log(err)
+                console.log(err);
                 res.render('error', {message:'查询出错了！'});
                 return ;
             }
             var pages = pageUtil.pageList(page,results[1]);
             var url = "/search?keyWord=" + keyWord +"&page=";
-            res.render('items', {title:site.title,items:results[0],keyWord:keyWord,page:page,pages:pages,url:url,count:results[1]});
+            res.render('items', {title:site.title,items:results[0],keyWord:keyWord,page:page,pages:pages,url:url,count:Math.ceil(results[1]/site.page_count_limit)});
         });
-
 });
 
 module.exports = router;
