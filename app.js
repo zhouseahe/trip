@@ -16,8 +16,8 @@ var MongoStore = require('connect-mongo')(session);
 app.use(session({
   secret:config.session_secret,
   store: new MongoStore({
-    url:config.db,
-    autoRemove: 'native' // Default
+    url:config.db
+    //,autoRemove: 'native'
   })
 }));
 
