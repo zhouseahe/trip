@@ -44,7 +44,7 @@ module.exports = {
         });
     },
     update: function(item,cb){
-        var condition = {_id:item.id};
+        var condition = {_id:item._id};
         topic.update(condition, item , function(err, doc) {
             if(err){
                 cb(err, null);

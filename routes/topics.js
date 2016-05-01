@@ -41,9 +41,9 @@ router.post('/item', function(req, res, next) {
   var item = {title:title,area:area,telephone:telephone,address:address,facility:facility,
     province:province,content:content,search:search};
   if(id){
-    item['id'] = id ;
+    item['_id'] = id ;
   }
-  if(item.id){
+  if(item._id){
     topicWrite.update(item,function(err,doc){
       if(err){
         console.log(err);
